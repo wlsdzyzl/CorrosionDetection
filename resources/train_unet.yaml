@@ -1,0 +1,15 @@
+# resnet
+checkpoint_dir: ./UNET_CHECK_POINT_DIR
+pretrained: null
+max_epochs: 1000
+learning_rate: 0.025
+weight_decay: 0.00001
+threshold: 0.5
+train_loader:
+  file_path: ./dataset/annotation/train
+  batch_size: 1
+  phase: train
+val_loader:
+  file_path: ./dataset/annotation/val
+  batch_size: 1
+  phase: val

@@ -1,0 +1,8 @@
+# resnet
+model_path: ./UNET_CHECK_POINT_DIR/best_checkpoint.pytorch
+threshold: 0.6
+output_dir: ./results/unet
+test_loader:
+  file_path: ./dataset/annotation/test
+  batch_size: 4
+  phase: test

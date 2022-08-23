@@ -1,0 +1,13 @@
+# resnet
+checkpoint_dir: ./RESNET_CHECK_POINT_DIR
+pretrained: null
+max_epochs: 100
+learning_rate: 0.025
+weight_decay: 0.0001
+threshold: 0.5
+loader:
+  file_path: ./dataset
+  rust_dir: rust
+  norust_dir: norust
+  batch_size: 4
+  train_ratio: 0.8

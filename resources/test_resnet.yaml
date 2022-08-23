@@ -1,0 +1,10 @@
+# resnet
+model_path: ./RESNET_CHECK_POINT_DIR/best_checkpoint.pytorch
+threshold: 0.0
+output_dir: ./results/resnet
+loader:
+  file_path: ./dataset
+  rust_dir: rust
+  norust_dir: norust
+  batch_size: 4
+  train_ratio: 0.8
