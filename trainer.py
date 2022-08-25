@@ -117,6 +117,6 @@ class ModelTrainer:
                     if is_best:
                         self.best_acc = epoch_acc
         np.savetxt('./results/acc_train.txt', acc_list['train'])
-        np.savetxt('/results/loss_train.txt', loss_list['train'])
-        np.savetxt('/results/acc_val.txt', acc_list['val'])
-        np.savetxt('/results/loss_val.txt', loss_list['val'])
+        np.savetxt('./results/loss_train.txt', loss_list['train'])
+        np.savetxt('./results/acc_val.txt', acc_list['val'])
+        np.savetxt('./results/loss_val.txt', loss_list['val'])

@@ -3,6 +3,6 @@ model_path: ./UNET_CHECK_POINT_DIR/best_checkpoint.pytorch
 threshold: 0.5
 output_dir: ./results/unet
 test_loader:
-  file_path: ./dataset/annotation/train
+  file_path: ./dataset/annotation/test
   batch_size: 4
   phase: test

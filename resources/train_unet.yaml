@@ -2,7 +2,7 @@
 checkpoint_dir: ./UNET_CHECK_POINT_DIR
 pretrained: null
 max_epochs: 50
-learning_rate: 0.025
+learning_rate: 0.01
 weight_decay: 0.00001
 threshold: 0.5
 train_loader:

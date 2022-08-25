@@ -3,3 +3,4 @@ RESNET_CHECK_POINT_DIR
 UNET_CHECK_POINT_DIR
 dataset
 plot.py
+*.zip

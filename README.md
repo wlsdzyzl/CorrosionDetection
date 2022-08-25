@@ -8,7 +8,11 @@ For a given image, use `resnet` for image classification. If it's classified as 
 
 ### Dataset
 
-All the image from classification dataset are collected from internet (some of them are from [Oxford pet datasets](https://www.robots.ox.ac.uk/~vgg/data/pets/)). The small dataset for corrosion segmentation is annotated by myself ([Annotation tool](https://www.robots.ox.ac.uk/~vgg/software/via/via.html)). Because of the lack of large dataset, the performance might be limited.
+All the images from classification dataset are collected from internet (some of them are from [Oxford pet datasets](https://www.robots.ox.ac.uk/~vgg/data/pets/)). The small dataset for corrosion segmentation is annotated by myself ([Annotation tool](https://www.robots.ox.ac.uk/~vgg/software/via/via.html)). Because of the lack of large dataset, the performance might be limited.
+
+![](./images/annotation.jpg)
+
+The dataset can be download [here](https://drive.google.com/file/d/1e_aZtxXpN4wBj65Xz0ch_4TLA2OAF7V-/view?usp=sharing).
 
 ### Selected results
 
