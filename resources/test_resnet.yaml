@@ -1,6 +1,6 @@
 # resnet
 model_path: ./RESNET_CHECK_POINT_DIR/best_checkpoint.pytorch
-threshold: 0.0
+threshold: 0.5
 output_dir: ./results/resnet
 loader:
   file_path: ./dataset

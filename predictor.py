@@ -6,6 +6,7 @@ from dataloader import get_rust_loader, get_annotated_rust_loader
 from unet import UNet
 
 import imageio
+import time
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -47,6 +48,7 @@ class ModelPredictor:
     def predict(self):
         idx = 0
         Sigmoid = nn.Sigmoid()
+        start = time.time()
         with torch.set_grad_enabled(False):   
             for inputs in self.dataloader:
                 # track history if only in train
@@ -61,4 +63,13 @@ class ModelPredictor:
                         imageio.imwrite(self.output_dir + '/' + str(idx) +'_mask.png', pred)
                         imageio.imwrite(self.output_dir + '/' + str(idx) +'_prob.png', output)
                         idx += 1
+                else:
 
+                    preds = torch.cat(preds).flatten().cpu().numpy()
+                    idx += len(preds)
+                    print(preds)
+                    with open(self.output_dir + '/res.txt', 'ab') as f:
+                        np.savetxt(f, preds)
+
+        end = time.time()
+        print(  idx / (end - start ), 'FPS')

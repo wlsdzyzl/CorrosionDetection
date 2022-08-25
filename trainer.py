@@ -59,6 +59,11 @@ class ModelTrainer:
         self.checkpoint_dir = checkpoint_dir
         self.threshold = threshold
     def train(self):
+        
+        acc_list = {'train': [], 'val': []}
+        loss_list = {'train': [], 'val': []}
+
+
         Sigmoid = nn.Sigmoid()
         for epoch in range(self.max_epochs):
             print(f'Epoch {epoch}/{self.max_epochs - 1}')
@@ -92,12 +97,13 @@ class ModelTrainer:
                             self.optimizer.step()
 
                     # statistics
-                    running_loss += loss.item() * len(inputs)
+                    running_loss += loss * len(inputs)
                     running_corrects += torch.sum(preds == labels.data)
                     running_overall += len(preds)
                 epoch_loss = running_loss / self.dataset_sizes[phase]
                 epoch_acc = running_corrects.double() / running_overall
-
+                acc_list[phase].append(epoch_acc.item())
+                loss_list[phase].append(epoch_loss.item())
                 print(f'{phase} Loss: {epoch_loss:.4f} Acc: {epoch_acc:.4f}')
                 if phase == 'train':
                     self.scheduler.step(epoch_acc)
@@ -110,3 +116,7 @@ class ModelTrainer:
                         }, is_best, self.checkpoint_dir)
                     if is_best:
                         self.best_acc = epoch_acc
+        np.savetxt('./results/acc_train.txt', acc_list['train'])
+        np.savetxt('/results/loss_train.txt', loss_list['train'])
+        np.savetxt('/results/acc_val.txt', acc_list['val'])
+        np.savetxt('/results/loss_val.txt', loss_list['val'])
