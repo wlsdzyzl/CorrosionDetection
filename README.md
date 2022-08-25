@@ -13,13 +13,17 @@ All the image from classification dataset are collected from internet (some of t
 ### Selected results
 
 - Classification
+
 ![](./images/eval_resnet.png)
 
 - Segmentation
+
 ![](./images/eval_unet.png)
 
 - Classification failure cases:
+
 ![](./images/failure_case.png)
 
 - Segmentation on unlabelled images:
+
 ![](./images/test_results.png)
